@@ -5,55 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script src="signUpFormValidation.js"></script>
+    <script src="signInFormValidation.js"></script>
+
     <link rel="stylesheet" href="../CSS/style.css">
   <title>Academic Advisement Portal</title>
 
-  <style>
-  	html {
-		background-image: url(../pics/utech-gate.jpg);
-		background-image: no-repeat;
-		background-attachment: fixed; 
-		background-size: cover;
-		color: black;
-		font-weight: lighter;
-		font-size: 15px;
-		width: 100%;
-		font-family: "Times New Roman", Times, serif;
-}
 
-::placeholder {
-    color: white;
-    opacity: 0.4;
-}
-  </style>
-<script>
-	/* function validateLName() {
-    var x = document.forms["myForm"]["LName"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-}
-</script>
+
 </head>
 
 <body>
 	<div class="overlay">
 		<div class="login-wrap">
 			<div class="login-html">
-				<form name="myForm" action="/home.html"
-		 method="post">
+				<form name="login" onsubmit="return signupformValidation()" action="home.html"	 method="post">
 					<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="margin-top: 30%;">Sign In</label>
 					<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
 					<div class="login-form">
 						<div class="sign-in-htm">
 							<div class="group">
 								<label for="user"  class="label">Username</label>
-								<input placeholder="ID Number" id="user" type="text" class="input" pattern="[0-9]" maxlength="7" required>
+								<input placeholder="ID Number" name="idnum" type="text" class="input"  maxlength="7" required>
 							</div>
 							<div class="group">
 								<label for="pass" class="label">Password</label>
-								<input placeholder="Enter Password" id="pass" type="password" class="input" data-type="password" pattern=".{8,}" maxlength="20" required>
+								<input placeholder="Enter Password" name="password" type="password" class="input" data-type="password"  maxlength="20" required>
 							</div>
 							<div class="group">
 								<input id="check" type="checkbox" class="check" checked>
@@ -70,53 +47,53 @@
 			</div>
 
 			
-<form name="myForm" action="/action_page.php"
-onsubmit="return validateForm()" method="post">
+
 
 <div class="sign-up-htm">
+	<form name="registration" onsubmit="return signupformValidation()" >
 				<div class="group">
-					<label for="user" class="label">First Name</label>
-					<input placeholder="John" id="user" type="text" class="input" pattern="[A-Za-z]{15}" required>
+					<label for="fname" class="label">First Name</label>
+					<input placeholder="John" name="fname" type="text" class="input" maxlength="15" required>
 				</div>
 				<div class="group">
-					<label for="user" class="label">Last Name</label>
-					<input placeholder="Doe" id="user" type="text" class="input" pattern="[A-Za-z]" maxlength="15" required>
+					<label for="lname" class="label">Last Name</label>
+					<input placeholder="Doe" name="lname" type="text" class="input"  maxlength="15" required>
 				</div>
 				<div class="group">
-					<label for="user" class="label">ID Number</label>
-					<input placeholder="1406948" id="user" type="text" class="input" pattern="[0-9]" maxlength="7" required>
+					<label for="idnum" class="label">ID Number</label>
+					<input placeholder="1406948" name="idnum" type="text" class="input"  maxlength="7" required>
 				</div>
 
 
 				<div class="group">
-					<label for="user" class="label">Specialization</label>
-					<input placeholder="Networking" id="user" type="text" class="input" pattern="[A-Za-z]{20}"  required>
+					<label for="specialization" class="label">Specialization</label>
+					<input placeholder="Networking" name="specialization" type="text" class="input"   required>
 				</div>
 				<div class="group">
-					<label for="user" class="label">Phone Number</label>
-					<input placeholder="1(876)416-8646" id="user" type="text" class="input" pattern="[0-9]" maxlength="17" required>
+					<label for="yearofstudy" class="label">Year of Study</label>
+					<input placeholder="4th year" name="yearofstudy" type="text" class="input" maxlength="8" required>
 				</div>
 				<div class="group">
-					<label for="user" class="label">Year of Study</label>
-					<input placeholder="4th year" id="user" type="text" class="input" maxlength="8" required>
+					<label for="phonenum" class="label">Phone Number</label>
+					<input placeholder="18764168646" name="phonenum" type="text" class="input" maxlength="17" required>
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password"  pattern=".{8,}" maxlength="20" required>
+					<label for="password" class="label">Password</label>
+					<input name="password" type="password" class="input" data-type="password"   maxlength="20" required>
 				</div> 
 				<div class="group">
 					<label for="pass" class="label">Email Address</label>
-					<input placeholder="name@domain.com" id="pass" type="text" class="input" maxlength="25" required>
+					<input placeholder="name@domain.com" name="pass" type="text" class="input" maxlength="25" required>
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
+					<input type="submit" name="submit" class="button" value="Sign Up">
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
 					<label for="tab-1">Already Member?</label></a>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 		</div>
 	</div>
 
