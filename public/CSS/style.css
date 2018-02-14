@@ -1,3 +1,21 @@
+	html {
+		background-image: url(../pics/utech-gate.jpg);
+		background-image: no-repeat;
+		background-attachment: fixed; 
+		background-size: cover;
+		color: black;
+		font-weight: lighter;
+		font-size: 15px;
+		width: 100%;
+		font-family: "Times New Roman", Times, serif;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.4;
+}
+
+
 body{
 	margin: 0;
 	margin-left: 0;
