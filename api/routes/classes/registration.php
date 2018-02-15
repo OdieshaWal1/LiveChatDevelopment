@@ -24,7 +24,7 @@ private $is_active;
 function _construct ($registration){
 
 $this->created_on = date("Y-m-d H:i:s");
-$this->updated_on = $registration->updated_on;
+$this->updated_on =  date("Y-m-d H:i:s");
 $this->reg_id = $registration->reg_id;
 $this->first_name = $registration->first_name;
 $this->last_name = $registration->last_name;
