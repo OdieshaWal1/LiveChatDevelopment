@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <?php include('form_validation.php'); ?>
     <link rel="stylesheet" href="public/CSS/style2.css">
    
 
@@ -33,6 +34,7 @@
 
 <body>
 	<div class="overlay">
+		<form id="contact" action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
 <div class="login-wrap">
 	<div class="login-html">
 
@@ -50,25 +52,33 @@
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="label">First Name</label>
-					<input placeholder="John" id="user" type="text" class="input">
+					<input placeholder="John" name="name" value="<?= $name ?>" id="user" type="text" class="input">
+					<spam class="error"><?= $name_error ?></spam>
 				</div>
 				<div class="group">
 					<label for="user" class="label">Last Name</label>
-					<input placeholder="Doe" id="user" type="text" class="input">
+					<input placeholder="Doe" name="Lastname" value="<?= $Lastname ?>" id="user" type="text" class="input">
+
+					<spam class="error"><?= $Lastname_error ?></spam>
 				</div>
+
 				<div class="group">
 					<label for="user" class="label">ID Number</label>
-					<input placeholder="1406948" id="user" type="text" class="input">
+					<input placeholder="1406948" name="phone" id="user" type="number" class="input">
 				</div>
 
 
 				<div class="group">
 					<label for="user" class="label">Specialization</label>
-					<input placeholder="Networking" id="user" type="text" class="input">
+					<input placeholder="Networking" name="spec" value="<?= $spec ?>" id="user" type="text" class="input">
+					<spam class="error"><?= $spec_error ?></spam>
 				</div>
+
+
 				<div class="group">
 					<label for="user" class="label">Phone Number</label>
-					<input placeholder="1(876)416-8646" id="user" type="text" class="input">
+					<input placeholder="1(876)416-8646" id="user" type="text" name="phone" value="<?= $phone ?>" class="input">
+					<spam class="error"><?= $phone_error ?></spam>
 				</div>
 				<div class="group">
 					<label for="user" class="label">Year of Study</label>
@@ -76,18 +86,20 @@
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
+					<input id="pass" type="passwor d" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Email Address</label>
-					<input placeholder="name@domain.com" id="pass" type="text" class="input">
+					<input placeholder="name@domain.com" name="email" value="<?= $email ?>" id="pass" type="text" class="input">
+					<spam class="error"><?= $email_error ?></spam>
 				</div>
 				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
+					<input for="tab-2" type="submit" class="button" value="Sign Up" >
+				
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="index.html">Already Member?</a>
+					<a href="index.php">Already Member?</a>
 				</div>
 			</div>
 		</div>
@@ -95,6 +107,7 @@
 </div>
 </div>
 </div>
+</form>
 </body>
 
 </html>
