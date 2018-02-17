@@ -6,7 +6,7 @@
 class Registration {
 	
 private $created_on;
-private $created_by;
+private $updated_on;
 private $reg_id;
 private $first_name;
 private $last_name;
@@ -21,7 +21,7 @@ private $is_active;
  *add comment
  */
 
-function _construct ($registration){
+function_construct ($registration){
 
 $this->created_on = date("Y-m-d H:i:s");
 $this->updated_on =  date("Y-m-d H:i:s");
@@ -89,4 +89,5 @@ $this->is_active = $registration->is_active;
       }
       return $result;
     }
+
 ?>

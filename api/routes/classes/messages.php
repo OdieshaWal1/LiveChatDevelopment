@@ -6,7 +6,7 @@
 class Messages {
 	
 private $created_on;
-private $created_by;
+private $updated_on;
 private $m_id;
 private $messages;
 private $sender;
@@ -20,7 +20,7 @@ private $attach_id;
  *add comment
  */
 
-function _construct ($messages){
+function_construct ($messages){
 
 $this->created_on = date("Y-m-d H:i:s");
 $this->updated_on = date("Y-m-d H:i:s");
@@ -35,8 +35,8 @@ $this->attach_id = $messages->attach_id;
 
 
 		public function save() {
-			$sql = 'INSERT INTO  messages (m_id,messages,sender,attach_id,created_on,updated_on,conver_id,date,time)
-			 VALUES (:m_id, :messages, :sender, :attach_id, :created_on, :updated_on, :conver_id, :date, :time)'
+			$sql = 'INSERT INTO  messages (messages,sender,attach_id,created_on,updated_on,conver_id,date,time)
+			 VALUES (:messages, :sender, :attach_id, :created_on, :updated_on, :conver_id, :date, :time)'
 
 			try {
         $db = openDBConnection();
@@ -48,8 +48,8 @@ $this->attach_id = $messages->attach_id;
                   			"time" => $this->time,
                   			"messages" => strtolower( $this->messages),
                             ":updated_on" => date("Y-m-d H:i:s"),
-                            ":created_on" => date("Y-m-d H:i:s"),
-                            ":m_id" => $this->m_id ));
+                            ":created_on" => date("Y-m-d H:i:s")
+                            // ":m_id" => $this->m_id ));
        $m_id = $db->lastInsertId();
        closeDBConnection( $db );
       } catch (PDOException $e) {
@@ -59,7 +59,7 @@ $this->attach_id = $messages->attach_id;
     }
 
 /**
- * getting registration by id 
+ * getting messages by id 
  */
 	static function getAll($m_id){
 
@@ -69,7 +69,7 @@ $this->attach_id = $messages->attach_id;
 		 	 try{
         $db = openDBConnection();
         $stmt = $db->prepare( $sql );
-        $stmt->bindParam("id", $reg_id);
+        $stmt->bindParam("id", $m_id);
         $stmt->execute();
         $result = $stmt->fetchAll( PDO::FETCH_OBJ );
         closeDBConnection( $db );
@@ -78,4 +78,8 @@ $this->attach_id = $messages->attach_id;
       }
       return $result;
     }
+
+    
+
+
 ?>
