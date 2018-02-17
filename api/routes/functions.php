@@ -93,11 +93,20 @@ function paramCheck($params){
         // Connection 
         // 
         
-        $con=mysqli_connect($ser, $user, $pass,$db)
+        $lca_conn = mysqli_connect($ser, $user, $pass,$db);
 
+        if (!$lca_conn)
+              {
+                die ('Cannot Establish Connection to Database : ' . mysql_error());
+              }
 
+          $lca_dba = mysql_select_db($db, $lca_conn); 
 
+          if (!$lca_dba)
+                {
+                  die ('Cannot Select Database : ' . mysql_error())
 
+             }
 
   }
 
@@ -144,18 +153,49 @@ function setSession($key, $value){
 function getSession($key){
   return $_SESSION[$key];
 }
+
 /**
  * Checks if a property of an object is empty
- * @param  [type]  $mail [description]
+ * @param  [type]  $registration [description]
  * @return boolean       [description]
  */
-function isValueEmpty( $mail ){
+function isValueEmpty( $registration ){
   $empty = false;
-  foreach ($mail as $key => $value) {
+  foreach ($registration as $key => $value) {
     if(empty($value)){
       $empty = true;
     }
   }
   return $empty;
+
+}
+
+
+/*
+Checks if a property of an object is empty
+ */
+function isValueEmpty( $messages ){
+  $empty = false;
+  foreach ($messages as $key => $value) {
+    if(empty($value)){
+      $empty = true;
+    }
+  }
+  return $empty;
+  
+}
+
+/*
+Checks if a property of an object is empty
+ */
+function isValueEmpty( $conversations ){
+  $empty = false;
+  foreach ($conversations as $key => $value) {
+    if(empty($value)){
+      $empty = true;
+    }
+  }
+  return $empty;
+  
 }
 ?>
