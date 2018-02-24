@@ -43,7 +43,6 @@
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" style="margin-top: 30%;">Sign in</label>
 
 
-		
 		<div class="login-form">
 			<div class="sign-in-htm">
 				<div class="group">
