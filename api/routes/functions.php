@@ -107,7 +107,6 @@ function paramCheck($params){
                   die ('Cannot Select Database : ' . mysql_error())
 
              }
-
   }
 
 

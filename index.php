@@ -48,7 +48,7 @@
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user"  class="label">Username</label>
-					<input placeholder="ID Number" id="user" type="number" class="input">
+					<input placeholder="ID Number" id="user" type="text" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
