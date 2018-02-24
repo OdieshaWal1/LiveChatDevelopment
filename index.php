@@ -48,7 +48,8 @@
 			<div class="sign-in-htm">
 				<div class="group">
 					<label for="user"  class="label">Username</label>
-					<input placeholder="ID Number" id="user" type="number" class="input">
+					<input placeholder="ID Number" id="user" type="text" class="input">
+					<spam class="error"><?= $name_error ?></spam>
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
@@ -63,7 +64,7 @@
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="signup.php">New Member?</a>
+					<a style="color: white;" href="signup.php">New Member?</a>
 				</div>
 			</div>
 		</div>
