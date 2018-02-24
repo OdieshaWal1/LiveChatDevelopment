@@ -64,15 +64,30 @@
 
 				<div class="group">
 					<label for="user" class="label">ID Number</label>
-					<input placeholder="1406948" name="phone" id="user" type="number" class="input">
+					<input placeholder="1406948" name="phone" id="user" type="text" class="input">
 				</div>
 
 
-				<div class="group">
+				<!-- <div class="group">
 					<label for="user" class="label">Specialization</label>
 					<input placeholder="Networking" name="spec" value="<?= $spec ?>" id="user" type="text" class="input">
 					<spam class="error"><?= $spec_error ?></spam>
+				</div> -->
+				<div class="group">
+				<label for="user" class="label">Specialization</label>
+				<select style="width: 100%;height: 40px;background:rgba(255,255,255,.1);border-radius:40%;border:none;border-color:#1161ee; color: white;opacity: 0.8;">
+					<option value="">-- Select an option -- </option>
+					<option value="Networking">Networking</option>
+					<option value="Information System">Information System</option>
+					<option value="Multimedia">Multimedia</option>
+					<option value="Enterprise Systems">Enterprise Systems</option>
+					<option value="Computer Science">Computer Science</option>
+					<option value="Animation Production and Development">Animation Production and Development</option>
+				</select>
 				</div>
+
+
+
 
 
 				<div class="group">
@@ -99,7 +114,7 @@
 				</div>
 				<div class="hr"></div>
 				<div class="foot-lnk">
-					<a href="index.php">Already Member?</a>
+					<a style="color: white;" href="index.php">Already Member?</a>
 				</div>
 			</div>
 		</div>
