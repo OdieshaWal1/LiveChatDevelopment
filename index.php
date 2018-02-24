@@ -25,7 +25,7 @@
 }
 
 ::placeholder {
-    color: white;
+    color: #ffffff;
     opacity: 0.4;
 }
   </style>
